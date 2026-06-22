@@ -1,0 +1,30 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'eslint-config-prettier',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ['import'],
+  rules: {
+    'eol-last': 'error',
+    'import/newline-after-import': ['error', { count: 1 }],
+    '@typescript-eslint/no-misused-promises': 0,
+    '@typescript-eslint/no-floating-promises': 0,
+    '@typescript-eslint/no-explicit-any': 1,
+    '@typescript-eslint/no-unsafe-assignment': 1,
+    '@typescript-eslint/no-unsafe-argument': 1,
+    '@typescript-eslint/no-unsafe-member-access': 1,
+    '@typescript-eslint/prefer-nullish-coalescing': 0,
+  },
+}
